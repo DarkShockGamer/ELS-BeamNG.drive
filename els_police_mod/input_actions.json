@@ -1,0 +1,32 @@
+{
+  "input_actions": {
+    "els_toggle": {
+      "title": "Toggle ELS System",
+      "cat": "vehicle",
+      "desc": "Turn the ELS emergency lighting system on/off.",
+      "isCentered": true,
+      "onChange": "controller.onToggleElsSystem"
+    },
+    "els_siren_cycle": {
+      "title": "Cycle Siren Tone",
+      "cat": "vehicle",
+      "desc": "Cycle through available siren tones.",
+      "isCentered": true,
+      "onChange": "controller.onCycleSirenTone"
+    },
+    "els_airhorn": {
+      "title": "ELS Air Horn",
+      "cat": "vehicle",
+      "desc": "Activate the ELS air horn while held.",
+      "isCentered": false,
+      "onChange": "controller.onAirhorn"
+    },
+    "els_lights_cycle": {
+      "title": "Cycle ELS Light Stage",
+      "cat": "vehicle",
+      "desc": "Cycle through ELS light stages (0-3).",
+      "isCentered": true,
+      "onChange": "controller.onCycleElsStage"
+    }
+  }
+}
