@@ -12,7 +12,6 @@ local airhornActive = false
 
 -- Siren names for cycling
 local sirenTones = {
-  "off",
   "els_siren_wail",
   "els_siren_yelp",
   "els_siren_priority",
@@ -31,8 +30,6 @@ end
 
 -- Update electrics based on current stage
 local function updateElectrics()
-  local electrics = electrics or {}
-  
   -- Stage 0: Off
   if currentLightStage == 0 or not elsEnabled then
     electrics.values.els_rear = 0
@@ -66,15 +63,13 @@ local function stopSiren()
   end
 end
 
--- Play siren by index
+-- Play siren by index (1-5 for the 5 siren tones)
 local function playSiren(index)
   stopSiren()
   if index > 0 and index <= #sirenTones then
     local soundName = sirenTones[index]
-    if soundName ~= "off" then
-      currentSirenSound = obj:playSound(soundName, 1, 1, true)
-      log("Siren: " .. soundName)
-    end
+    currentSirenSound = obj:playSound(soundName, 1, 1, true)
+    log("Siren: " .. soundName)
   end
 end
 
@@ -92,16 +87,16 @@ local function toggleElsSystem()
   updateElectrics()
 end
 
--- Cycle through siren tones
+-- Cycle through siren tones (0=Off, 1=Wail, 2=Yelp, 3=Priority, 4=Hi-Lo, 5=Phaser)
 local function cycleSirenTone()
   if not elsEnabled then
     log("ELS System is OFF - enable it first")
     return
   end
   
-  currentSirenIndex = (currentSirenIndex % #sirenTones) + 1
-  if currentSirenIndex == 1 then
-    currentSirenIndex = 0  -- Skip "off" in cycle, go to 0 (off)
+  -- Cycle: 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 0
+  currentSirenIndex = (currentSirenIndex + 1) % (#sirenTones + 1)
+  if currentSirenIndex == 0 then
     stopSiren()
     log("Siren: OFF")
   else
