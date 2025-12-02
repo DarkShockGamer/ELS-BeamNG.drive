@@ -1,5 +1,6 @@
 {
   "sunburst": {
+    "information": { "name": "ELS Controller Patch", "authors": "DarkShockGamer", "value": 0.01 },
     "slotType": "sunburst_main",
     "$+controllers": [
       ["fileName"],

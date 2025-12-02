@@ -1,5 +1,6 @@
 {
   "bastion": {
+    "information": { "name": "ELS Controller Patch", "authors": "DarkShockGamer", "value": 0.01 },
     "slotType": "bastion_main",
     "$+controllers": [
       ["fileName"],

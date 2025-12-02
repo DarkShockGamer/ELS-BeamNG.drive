@@ -1,5 +1,6 @@
 {
   "fullsize": {
+    "information": { "name": "ELS Controller Patch", "authors": "DarkShockGamer", "value": 0.01 },
     "slotType": "fullsize_main",
     "$+controllers": [
       ["fileName"],
