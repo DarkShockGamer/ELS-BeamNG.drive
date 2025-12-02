@@ -1,5 +1,40 @@
 {
   "sounds": {
+    "airhorn_AIRHORN_wav": {
+      "file": "AIRHORN.wav",
+      "volume": 1.0,
+      "looping": false,
+      "spatial": true,
+      "range": 150
+    },
+    "airhorn_Airhorn_wav": {
+      "file": "Airhorn.wav",
+      "volume": 1.0,
+      "looping": false,
+      "spatial": true,
+      "range": 150
+    },
+    "airhorn_airhorn_wav": {
+      "file": "airhorn.wav",
+      "volume": 1.0,
+      "looping": false,
+      "spatial": true,
+      "range": 150
+    },
+    "airhorn_lspdfr_wav": {
+      "file": "lspdfr_airhorn.wav",
+      "volume": 1.0,
+      "looping": false,
+      "spatial": true,
+      "range": 150
+    },
+    "airhorn_ogg": {
+      "file": "airhorn.ogg",
+      "volume": 1.0,
+      "looping": false,
+      "spatial": true,
+      "range": 150
+    },
     "lspdfr_airhorn": {
       "file": "lspdfr_airhorn.ogg",
       "volume": 1.0,
@@ -7,8 +42,78 @@
       "spatial": true,
       "range": 150
     },
+    "wail_WAIL_wav": {
+      "file": "WAIL.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "wail_Siren_Wail_wav": {
+      "file": "Siren_Wail.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "wail_wail_wav": {
+      "file": "wail.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "wail_lspdfr_wav": {
+      "file": "lspdfr_wail.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "wail_ogg": {
+      "file": "wail.ogg",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
     "lspdfr_wail": {
       "file": "lspdfr_wail.ogg",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "yelp_YELP_wav": {
+      "file": "YELP.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "yelp_Siren_Yelp_wav": {
+      "file": "Siren_Yelp.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "yelp_yelp_wav": {
+      "file": "yelp.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "yelp_lspdfr_wav": {
+      "file": "lspdfr_yelp.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "yelp_ogg": {
+      "file": "yelp.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
@@ -21,6 +126,41 @@
       "spatial": true,
       "range": 200
     },
+    "priority_PRIORITY_wav": {
+      "file": "PRIORITY.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "priority_Priority_wav": {
+      "file": "Priority.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "priority_priority_wav": {
+      "file": "priority.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "priority_lspdfr_wav": {
+      "file": "lspdfr_priority.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "priority_ogg": {
+      "file": "priority.ogg",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
     "lspdfr_priority": {
       "file": "lspdfr_priority.ogg",
       "volume": 1.0,
@@ -28,8 +168,85 @@
       "spatial": true,
       "range": 200
     },
+    "hilo_HILO_wav": {
+      "file": "HILO.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "hilo_HI_LO_wav": {
+      "file": "HI_LO.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "hilo_Hilo_wav": {
+      "file": "Hilo.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "hilo_hilo_wav": {
+      "file": "hilo.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "hilo_lspdfr_wav": {
+      "file": "lspdfr_hilo.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "hilo_ogg": {
+      "file": "hilo.ogg",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
     "lspdfr_hilo": {
       "file": "lspdfr_hilo.ogg",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "phaser_PHASER_wav": {
+      "file": "PHASER.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "phaser_Phaser_wav": {
+      "file": "Phaser.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "phaser_phaser_wav": {
+      "file": "phaser.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "phaser_lspdfr_wav": {
+      "file": "lspdfr_phaser.wav",
+      "volume": 1.0,
+      "looping": true,
+      "spatial": true,
+      "range": 200
+    },
+    "phaser_ogg": {
+      "file": "phaser.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,

@@ -10,18 +10,82 @@ local currentLightStage = 0  -- 0=Off, 1=Rear, 2=Front+Rear, 3=Full
 local currentSirenIndex = 0  -- 0=Off, 1=Wail, 2=Yelp, 3=Priority, 4=Hi-Lo, 5=Phaser
 local airhornActive = false
 
--- Siren names for cycling (LSPDFR-compatible naming)
+-- Prioritized sound definition IDs per tone (tries each until one plays)
+-- Covers common LSPDFR WAV filenames with OGG fallbacks
 local sirenTones = {
-  "lspdfr_wail",
-  "lspdfr_yelp",
-  "lspdfr_priority",
-  "lspdfr_hilo",
-  "lspdfr_phaser"
+  { -- Wail
+    ids = {
+      "wail_WAIL_wav",
+      "wail_Siren_Wail_wav",
+      "wail_wail_wav",
+      "wail_lspdfr_wav",
+      "wail_ogg",
+      "lspdfr_wail"
+    },
+    name = "Wail"
+  },
+  { -- Yelp
+    ids = {
+      "yelp_YELP_wav",
+      "yelp_Siren_Yelp_wav",
+      "yelp_yelp_wav",
+      "yelp_lspdfr_wav",
+      "yelp_ogg",
+      "lspdfr_yelp"
+    },
+    name = "Yelp"
+  },
+  { -- Priority
+    ids = {
+      "priority_PRIORITY_wav",
+      "priority_Priority_wav",
+      "priority_priority_wav",
+      "priority_lspdfr_wav",
+      "priority_ogg",
+      "lspdfr_priority"
+    },
+    name = "Priority"
+  },
+  { -- Hi-Lo
+    ids = {
+      "hilo_HILO_wav",
+      "hilo_HI_LO_wav",
+      "hilo_Hilo_wav",
+      "hilo_hilo_wav",
+      "hilo_lspdfr_wav",
+      "hilo_ogg",
+      "lspdfr_hilo"
+    },
+    name = "Hi-Lo"
+  },
+  { -- Phaser
+    ids = {
+      "phaser_PHASER_wav",
+      "phaser_Phaser_wav",
+      "phaser_phaser_wav",
+      "phaser_lspdfr_wav",
+      "phaser_ogg",
+      "lspdfr_phaser"
+    },
+    name = "Phaser"
+  }
+}
+
+-- Prioritized airhorn sound definition IDs
+local airhornIds = {
+  "airhorn_AIRHORN_wav",
+  "airhorn_Airhorn_wav",
+  "airhorn_airhorn_wav",
+  "airhorn_lspdfr_wav",
+  "airhorn_ogg",
+  "lspdfr_airhorn"
 }
 
 -- Sound object references
 local currentSirenSound = nil
+local currentSirenToneIds = nil  -- Track which tone's IDs are currently playing
 local airhornSound = nil
+local airhornPlayedId = nil  -- Track which airhorn ID was played
 
 -- Logging helper
 local function log(msg)
@@ -55,21 +119,37 @@ local function updateElectrics()
   log("Light stage: " .. currentLightStage)
 end
 
--- Stop current siren
+-- Stop current siren (resilient: stops all variants for the current tone)
 local function stopSiren()
   if currentSirenSound then
     obj:stopSound(currentSirenSound)
     currentSirenSound = nil
   end
+  -- Resilient stop: try to stop all variant IDs for the current tone
+  if currentSirenToneIds then
+    for _, soundId in ipairs(currentSirenToneIds) do
+      pcall(function() obj:stopSound(soundId) end)
+    end
+    currentSirenToneIds = nil
+  end
 end
 
 -- Play siren by index (1-5 for the 5 siren tones)
+-- Tries each sound definition ID in priority order until one plays
 local function playSiren(index)
   stopSiren()
   if index > 0 and index <= #sirenTones then
-    local soundName = sirenTones[index]
-    currentSirenSound = obj:playSound(soundName, 1, 1, true)
-    log("Siren: " .. soundName)
+    local tone = sirenTones[index]
+    currentSirenToneIds = tone.ids
+    for _, soundId in ipairs(tone.ids) do
+      local sound = obj:playSound(soundId, 1, 1, true)
+      if sound then
+        currentSirenSound = sound
+        log("Siren: " .. tone.name .. " (using " .. soundId .. ")")
+        return
+      end
+    end
+    log("Siren: " .. tone.name .. " - no audio file found")
   end
 end
 
@@ -115,16 +195,24 @@ local function cycleElsStage()
   updateElectrics()
 end
 
--- Activate airhorn
+-- Activate airhorn (tries each sound definition ID in priority order)
 local function activateAirhorn()
   if not airhornActive then
     airhornActive = true
-    airhornSound = obj:playSound("lspdfr_airhorn", 1, 1, false)
-    log("Airhorn: ON")
+    for _, soundId in ipairs(airhornIds) do
+      local sound = obj:playSound(soundId, 1, 1, false)
+      if sound then
+        airhornSound = sound
+        airhornPlayedId = soundId
+        log("Airhorn: ON (using " .. soundId .. ")")
+        return
+      end
+    end
+    log("Airhorn: ON - no audio file found")
   end
 end
 
--- Deactivate airhorn
+-- Deactivate airhorn (resilient: stops all variants)
 local function deactivateAirhorn()
   if airhornActive then
     airhornActive = false
@@ -132,6 +220,11 @@ local function deactivateAirhorn()
       obj:stopSound(airhornSound)
       airhornSound = nil
     end
+    -- Resilient stop: try to stop all airhorn variant IDs
+    for _, soundId in ipairs(airhornIds) do
+      pcall(function() obj:stopSound(soundId) end)
+    end
+    airhornPlayedId = nil
     log("Airhorn: OFF")
   end
 end
@@ -180,6 +273,10 @@ function M.init()
   currentLightStage = 0
   currentSirenIndex = 0
   airhornActive = false
+  currentSirenSound = nil
+  currentSirenToneIds = nil
+  airhornSound = nil
+  airhornPlayedId = nil
 end
 
 -- Reset on vehicle reset
