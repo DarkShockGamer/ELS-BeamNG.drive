@@ -1,33 +1,83 @@
 # ELS Police Mod (BeamNG.drive)
 
-Features
-- ELS sound system:
+## Features
+- **ELS sound system:**
   - 5 siren tones (Wail, Yelp, Priority, Hi-Lo, Phaser) - cycle with L
-  - Air horn replaces normal horn - hold H
+  - Air horn - hold H
   - Toggle ELS system - K
-- ELS lights integration:
+- **ELS lights integration:**
   - Stage 0: Off
   - Stage 1: Rear flashers
   - Stage 2: Front + rear flashers
   - Stage 3: Full lightbar and flashers
   - Cycle stages - J
-- Vehicle configs included:
-  - Ibishu Sunburst Police (ELS)
-  - Gavril Grand Marshal Police (ELS)
-  - Bruckell Bastion Police (ELS)
-  - Gavril D-Series Police (ELS)
+- **Supported vehicles** (patches existing police configs):
+  - Ibishu Sunburst (sunburst)
+  - Gavril Grand Marshal (fullsize)
+  - Bruckell Bastion (bastion)
+  - Gavril D-Series (pickup)
 
-Install (BeamNG local mods)
-1. Copy the `els_police_mod` folder into `Documents/BeamNG.drive/mods/`.
-2. Add audio files into `els_police_mod/art/sound/` (see below for details).
-3. Start BeamNG -> Mod Manager -> enable "ELS Police Mod".
-4. Controls -> Vehicle: bind keys (defaults are set).
+## Installation
 
-Drop-in LSPDFR WAV support
-This mod supports **drag-and-drop** of WAV files from LSPDFR siren packs directly into `els_police_mod/art/sound/` — no conversion to OGG or renaming required in most cases.
+### Step 1: Locate Your BeamNG User Folder
+
+1. Open BeamNG.drive
+2. Go to **Options → System → Open User Folder**
+3. Navigate to the `mods` folder inside the User Folder
+
+> ⚠️ **Important**: Do NOT install mods in the Steam installation directory. Always use the User Folder.
+
+> ⚠️ **OneDrive Users**: If your Documents folder syncs to OneDrive, your User Folder path may be in your OneDrive directory.
+
+### Step 2: Install the Mod
+
+Place the `els_police_mod` folder (or the zip containing it) into your `mods` folder.
+
+**Valid zip layouts:**
+```
+els_police_mod.zip
+└── els_police_mod/
+    ├── info.json
+    └── ...
+```
+or:
+```
+els_police_mod.zip
+├── info.json
+└── ...
+```
+
+> ⚠️ **Warning**: Avoid double-nesting (e.g., `els_police_mod/els_police_mod/`)!
+
+### Step 3: Clear Cache (Important!)
+
+After installing or updating:
+1. Open **BeamNG.drive Launcher**
+2. Click **Support Tools**
+3. Click **Clear Cache**
+4. Launch the game
+
+## How to Use
+
+This mod **patches existing police vehicle configurations** - you won't see separate "ELS" vehicles.
+
+1. Spawn a stock police configuration:
+   - Sunburst Police
+   - Grand Marshal Police
+   - Bastion Police
+   - D-Series Police
+
+2. Use keybinds:
+   - **K** - Toggle ELS system on/off
+   - **J** - Cycle light stages
+   - **L** - Cycle siren tones
+   - **H** - Air horn (hold)
+
+## Adding Custom Siren Sounds
+
+This mod does **not** include audio files. Add your own to `art/sound/`:
 
 ### Supported filename patterns (case-insensitive)
-The mod automatically detects and uses audio files matching these common LSPDFR naming patterns:
 
 | Tone     | Supported filenames                                                |
 |----------|--------------------------------------------------------------------|
@@ -38,61 +88,46 @@ The mod automatically detects and uses audio files matching these common LSPDFR 
 | Hi-Lo    | `HILO.wav`, `HI_LO.wav`, `Hilo.wav`, `hilo.wav`, `lspdfr_hilo.wav`, `hilo.ogg`, `lspdfr_hilo.ogg` |
 | Phaser   | `PHASER.wav`, `Phaser.wav`, `phaser.wav`, `lspdfr_phaser.wav`, `phaser.ogg`, `lspdfr_phaser.ogg` |
 
-### How to use LSPDFR siren packs
-1. Download an LSPDFR siren pack (legally obtained).
-2. Locate the WAV files in the siren pack (usually in a `sounds` or similar folder).
-3. Copy/drag the WAV files directly into `els_police_mod/art/sound/`.
-4. The mod will automatically detect and use the files based on their filenames.
+### Using LSPDFR Siren Packs
+1. Download an LSPDFR siren pack (legally obtained)
+2. Copy the WAV files directly into `els_police_mod/art/sound/`
+3. The mod will automatically detect files based on filename patterns
 
-If your siren pack uses different filenames, you can either:
-- Rename the files to match one of the supported patterns above
-- Convert to OGG and use the `lspdfr_*.ogg` naming convention
+If files don't match patterns above, rename them or convert to OGG using `lspdfr_*.ogg` naming.
 
-Required audio files (fallback naming)
-If you prefer to use OGG files or your pack doesn't match the patterns above, place the following `.ogg` files in `els_police_mod/art/sound/`:
-- `lspdfr_airhorn.ogg`
-- `lspdfr_wail.ogg`
-- `lspdfr_yelp.ogg`
-- `lspdfr_priority.ogg`
-- `lspdfr_hilo.ogg`
-- `lspdfr_phaser.ogg`
+## Default Keybinds
+- **K**: Toggle ELS System
+- **L**: Cycle Siren Tone
+- **H**: ELS Air Horn
+- **J**: Cycle ELS Light Stage
 
-How to obtain and convert siren sounds
-1. **Obtain LSPDFR siren sounds legally:**
-   - Visit the official LSPDFR website or community forums (https://www.lcpdfr.com/lspdfr/index/) for siren packs.
-   - Use royalty-free or Creative Commons licensed siren sounds from audio libraries.
-   - Record your own siren sounds if you have access to emergency vehicles.
-   - Ensure you have the right to use any audio files before downloading.
+## Troubleshooting
 
-2. **Convert audio to OGG format (optional):**
-   - Use free tools like [Audacity](https://www.audacityteam.org/) or [FFmpeg](https://ffmpeg.org/).
-   - In Audacity: Open your WAV/MP3 file -> File -> Export -> Export as OGG.
-   - Using FFmpeg (command line):
-     ```
-     ffmpeg -i input.wav -c:a libvorbis -q:a 5 output.ogg
-     ffmpeg -i input.mp3 -c:a libvorbis -q:a 5 output.ogg
-     ```
-   - Recommended quality: `-q:a 5` (good balance of size and quality).
+### "no file controller/elsController.lua" error
+- Update to the latest version
+- Clear the game cache (Launcher → Support Tools → Clear Cache)
 
-3. **Rename files to match expected names** (if needed) and place them in the `art/sound/` folder.
+### "nodesMissing" errors when spawning
+- Update to the latest version (older versions had incompatible vehicle definitions)
+- Clear the game cache
 
-Default keybinds
-- K: Toggle ELS System
-- L: Cycle Siren Tone
-- H: ELS Air Horn
-- J: Cycle ELS Light Stage
+### Ghost/duplicate ELS vehicles in selector
+- Remove old mod version and reinstall
+- Clear the game cache
 
-Audio licensing
+### Sirens don't play
+- Audio files are not included - add your own (see above)
+- Check console for "[ELS]" logs indicating which files are detected
+
+### Controls not working
+- Press K to enable ELS first
+- Check for keybind conflicts in Options → Controls
+
+## Audio Licensing
 - **This mod does not include any copyrighted audio files.**
-- You must provide your own audio files to use the siren functionality.
-- Use only audio that you have the legal right to use (purchased, royalty-free, Creative Commons, or self-recorded).
-- Do not distribute copyrighted siren packs with this mod.
+- You must provide your own audio files.
+- Use only legally obtained audio (purchased, royalty-free, Creative Commons, or self-recorded).
 
-Troubleshooting
-- If sirens don't play: verify your audio files match one of the supported filename patterns listed above, or check `art/sound/els_sounds.sbeam` for the full list of recognized filenames.
-- If lights don't toggle: ensure the vehicle variant is the stock police config. If you use custom configs, update the JBEAM prop/electrics names accordingly.
-- Use the console to see "[ELS]" logs which will indicate which sound file is being used.
+## Technical Notes
 
-Repository usage
-- Commit the entire `els_police_mod` directory to `main`.
-- If you want a zip release, compress `els_police_mod` and upload it to Releases.
+This mod uses BeamNG's `$+controllers` patch system to inject the ELS controller into existing vehicle definitions, avoiding duplicate vehicle entries and nodesMissing errors.

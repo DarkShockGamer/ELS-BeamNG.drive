@@ -1,0 +1,8 @@
+{
+  "pickup": {
+    "$+controllers": [
+      ["fileName"],
+      ["controller/elsController"]
+    ]
+  }
+}
