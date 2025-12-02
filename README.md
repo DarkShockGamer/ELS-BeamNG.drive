@@ -90,6 +90,8 @@ This mod **patches existing police vehicle configurations** - you won't see sepa
    - **L** - Cycle siren tones (Off→Wail→Yelp→Priority→Hi-Lo→Phaser→Off)
    - **H** - Air horn (hold to activate)
 
+> 💡 **Tip**: Controls are bound by default via `input_maps.json`. You can remap them under **Options → Controls → Vehicle** in the ELS category.
+
 ## Adding Custom Siren Sounds (Optional)
 
 This mod does **not** include audio files. To add your own siren sounds:
@@ -118,7 +120,8 @@ This mod does **not** include audio files. To add your own siren sounds:
 
 ### ELS controls not working
 - Press K to enable the ELS system first
-- Check that keybinds aren't conflicting with other mods (Options → Controls)
+- Check that keybinds aren't conflicting with other mods (**Options → Controls → Vehicle**)
+- ELS controls can be found in the **ELS** category and remapped as needed
 
 ### No siren sounds playing
 - Audio files are not included - you must add your own (see "Adding Custom Siren Sounds" above)
