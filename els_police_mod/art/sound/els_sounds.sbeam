@@ -1,42 +1,42 @@
 {
   "sounds": {
-    "els_airhorn": {
-      "file": "els_airhorn.ogg",
+    "lspdfr_airhorn": {
+      "file": "lspdfr_airhorn.ogg",
       "volume": 1.0,
       "looping": false,
       "spatial": true,
       "range": 150
     },
-    "els_siren_wail": {
-      "file": "els_siren_wail.ogg",
+    "lspdfr_wail": {
+      "file": "lspdfr_wail.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
       "range": 200
     },
-    "els_siren_yelp": {
-      "file": "els_siren_yelp.ogg",
+    "lspdfr_yelp": {
+      "file": "lspdfr_yelp.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
       "range": 200
     },
-    "els_siren_priority": {
-      "file": "els_siren_priority.ogg",
+    "lspdfr_priority": {
+      "file": "lspdfr_priority.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
       "range": 200
     },
-    "els_siren_hilo": {
-      "file": "els_siren_hilo.ogg",
+    "lspdfr_hilo": {
+      "file": "lspdfr_hilo.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
       "range": 200
     },
-    "els_siren_phaser": {
-      "file": "els_siren_phaser.ogg",
+    "lspdfr_phaser": {
+      "file": "lspdfr_phaser.ogg",
       "volume": 1.0,
       "looping": true,
       "spatial": true,
