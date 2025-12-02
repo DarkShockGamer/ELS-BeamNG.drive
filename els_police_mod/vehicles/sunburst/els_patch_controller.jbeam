@@ -1,5 +1,6 @@
 {
   "sunburst": {
+    "slotType": "sunburst_main",
     "$+controllers": [
       ["fileName"],
       ["controller/elsController"]

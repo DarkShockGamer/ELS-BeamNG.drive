@@ -1,5 +1,6 @@
 {
   "fullsize": {
+    "slotType": "fullsize_main",
     "$+controllers": [
       ["fileName"],
       ["controller/elsController"]

@@ -1,5 +1,6 @@
 {
   "bastion": {
+    "slotType": "bastion_main",
     "$+controllers": [
       ["fileName"],
       ["controller/elsController"]

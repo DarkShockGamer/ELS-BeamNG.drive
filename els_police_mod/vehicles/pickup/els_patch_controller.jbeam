@@ -1,5 +1,6 @@
 {
   "pickup": {
+    "slotType": "pickup_main",
     "$+controllers": [
       ["fileName"],
       ["controller/elsController"]
