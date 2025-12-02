@@ -1,0 +1,8 @@
+{
+  "bastion": {
+    "$+controllers": [
+      ["fileName"],
+      ["controller/elsController"]
+    ]
+  }
+}

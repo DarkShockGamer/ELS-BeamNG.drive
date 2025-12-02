@@ -1,0 +1,8 @@
+{
+  "sunburst": {
+    "$+controllers": [
+      ["fileName"],
+      ["controller/elsController"]
+    ]
+  }
+}

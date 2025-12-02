@@ -1,0 +1,8 @@
+{
+  "fullsize": {
+    "$+controllers": [
+      ["fileName"],
+      ["controller/elsController"]
+    ]
+  }
+}
