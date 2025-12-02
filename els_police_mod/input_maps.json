@@ -1,0 +1,16 @@
+{
+  "bindings": {
+    "els_toggle": {
+      "keyboard": "K"
+    },
+    "els_siren_cycle": {
+      "keyboard": "L"
+    },
+    "els_airhorn": {
+      "keyboard": "H"
+    },
+    "els_lights_cycle": {
+      "keyboard": "J"
+    }
+  }
+}
