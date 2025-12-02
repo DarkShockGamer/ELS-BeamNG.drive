@@ -1,1 +1,1 @@
-{"bastion":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"bastion","slotType":"bastion_main","$+controllers":[["fileName"],["elsController"]]}}
+{"bastion":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"bastion","slotType":"bastion_main","$+controllers":[["fileName"],["elsController"]],"$+input_maps":["@els_police_mod/input_maps.json"]}}

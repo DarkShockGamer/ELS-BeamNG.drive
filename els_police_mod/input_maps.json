@@ -1,16 +1,21 @@
 {
+  "actionCategories": [
+    ["id", "title", "desc"],
+    ["els", "ELS", "Emergency Lighting System controls"]
+  ],
+  "inputActions": [
+    ["action", "title", "desc", "onDown", "onUp", "order", "icon", "category"],
+    ["els_toggle", "ELS Toggle", "Toggle ELS on/off", "", "", -1021, "", "els"],
+    ["els_cycle_siren", "ELS Cycle Siren", "Cycle siren tone", "", "", -1022, "", "els"],
+    ["els_airhorn", "ELS Airhorn", "Hold to play airhorn", "", "", -1023, "", "els"],
+    ["els_cycle_lights", "ELS Cycle Lights", "Cycle light stage", "", "", -1024, "", "els"]
+  ],
   "bindings": {
-    "els_toggle": {
-      "keyboard": "K"
-    },
-    "els_siren_cycle": {
-      "keyboard": "L"
-    },
-    "els_airhorn": {
-      "keyboard": "H"
-    },
-    "els_lights_cycle": {
-      "keyboard": "J"
-    }
+    "keyboard0": [
+      ["els_toggle", "K"],
+      ["els_cycle_siren", "L"],
+      ["els_airhorn", "H"],
+      ["els_cycle_lights", "J"]
+    ]
   }
 }

@@ -285,4 +285,27 @@ function M.onReset()
   updateElectrics()
 end
 
+-- Handle input actions from input_maps.json
+function M.onAction(actionName, actionValue)
+  if actionName == "els_toggle" then
+    if actionValue > 0.5 then
+      toggleElsSystem()
+    end
+  elseif actionName == "els_cycle_siren" then
+    if actionValue > 0.5 then
+      cycleSirenTone()
+    end
+  elseif actionName == "els_airhorn" then
+    if actionValue > 0.5 then
+      activateAirhorn()
+    else
+      deactivateAirhorn()
+    end
+  elseif actionName == "els_cycle_lights" then
+    if actionValue > 0.5 then
+      cycleElsStage()
+    end
+  end
+end
+
 return M

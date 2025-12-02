@@ -1,1 +1,1 @@
-{"fullsize":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"fullsize","slotType":"fullsize_main","$+controllers":[["fileName"],["elsController"]]}}
+{"fullsize":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"fullsize","slotType":"fullsize_main","$+controllers":[["fileName"],["elsController"]],"$+input_maps":["@els_police_mod/input_maps.json"]}}
