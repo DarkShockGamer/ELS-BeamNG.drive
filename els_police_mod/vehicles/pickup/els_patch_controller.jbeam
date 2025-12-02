@@ -1,10 +1,1 @@
-{
-  "pickup": {
-    "information": { "name": "ELS Controller Patch", "authors": "DarkShockGamer", "value": 0.01 },
-    "slotType": "pickup_main",
-    "$+controllers": [
-      ["fileName"],
-      ["controller/elsController"]
-    ]
-  }
-}
+{"pickup":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"pickup","slotType":"pickup_main","$+controllers":[["fileName"],["elsController"]]}}

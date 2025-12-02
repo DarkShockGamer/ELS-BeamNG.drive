@@ -132,9 +132,12 @@ This mod does **not** include audio files. To add your own siren sounds:
 ## Technical Details
 
 This mod works by using BeamNG's `$+controllers` patch system to inject the ELS controller into existing vehicle definitions. This approach:
-- Avoids creating duplicate vehicle entries
+- Avoids creating duplicate vehicle entries in the vehicle selector
 - Prevents nodesMissing errors from incomplete vehicle definitions
 - Maintains compatibility with game updates
+- **Note**: The controller is appended via `$+controllers` merge - no separate "ELS" vehicle entries will appear in the vehicle selector
+
+> ⚠️ **Important**: After installing or updating this mod, always **Clear Cache** via the BeamNG Launcher (Support Tools → Clear Cache) to ensure the changes take effect properly.
 
 ## License
 
