@@ -10,13 +10,13 @@ local currentLightStage = 0  -- 0=Off, 1=Rear, 2=Front+Rear, 3=Full
 local currentSirenIndex = 0  -- 0=Off, 1=Wail, 2=Yelp, 3=Priority, 4=Hi-Lo, 5=Phaser
 local airhornActive = false
 
--- Siren names for cycling
+-- Siren names for cycling (LSPDFR-compatible naming)
 local sirenTones = {
-  "els_siren_wail",
-  "els_siren_yelp",
-  "els_siren_priority",
-  "els_siren_hilo",
-  "els_siren_phaser"
+  "lspdfr_wail",
+  "lspdfr_yelp",
+  "lspdfr_priority",
+  "lspdfr_hilo",
+  "lspdfr_phaser"
 }
 
 -- Sound object references
@@ -119,7 +119,7 @@ end
 local function activateAirhorn()
   if not airhornActive then
     airhornActive = true
-    airhornSound = obj:playSound("els_airhorn", 1, 1, false)
+    airhornSound = obj:playSound("lspdfr_airhorn", 1, 1, false)
     log("Airhorn: ON")
   end
 end
