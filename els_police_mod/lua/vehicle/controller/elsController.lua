@@ -122,7 +122,7 @@ end
 -- Stop current siren (resilient: stops all variants for the current tone)
 local function stopSiren()
   if currentSirenSound then
-    obj:stopSound(currentSirenSound)
+    pcall(function() obj:stopSound(currentSirenSound) end)
     currentSirenSound = nil
   end
   -- Resilient stop: try to stop all variant IDs for the current tone
@@ -217,7 +217,7 @@ local function deactivateAirhorn()
   if airhornActive then
     airhornActive = false
     if airhornSound then
-      obj:stopSound(airhornSound)
+      pcall(function() obj:stopSound(airhornSound) end)
       airhornSound = nil
     end
     -- Resilient stop: try to stop all airhorn variant IDs
