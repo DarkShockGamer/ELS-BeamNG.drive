@@ -1,10 +1,1 @@
-{
-  "sunburst": {
-    "information": { "name": "ELS Controller Patch", "authors": "DarkShockGamer", "value": 0.01 },
-    "slotType": "sunburst_main",
-    "$+controllers": [
-      ["fileName"],
-      ["controller/elsController"]
-    ]
-  }
-}
+{"sunburst":{"information":{"name":"ELS Controller Patch","authors":"DarkShockGamer","value":0.01},"partName":"sunburst","slotType":"sunburst_main","$+controllers":[["fileName"],["elsController"]]}}
